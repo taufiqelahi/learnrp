@@ -25,3 +25,5 @@ Future<String> testHandler( ref) async {
   return "Taufiq";
 }
 
+@riverpod
+int c(CRef ref)=>0;

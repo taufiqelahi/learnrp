@@ -20,7 +20,7 @@ final counterProvider = AutoDisposeNotifierProvider<Counter, int>.internal(
 );
 
 typedef _$Counter = AutoDisposeNotifier<int>;
-String _$darkModeHash() => r'6475e2172656abc88d3b3d9de11f3c7b249380f2';
+String _$darkModeHash() => r'958ab8707e42db9843b612428f4d89ad97c827bf';
 
 /// See also [DarkMode].
 @ProviderFor(DarkMode)
@@ -65,5 +65,21 @@ final colorHandlerProvider =
 );
 
 typedef _$ColorHandler = AutoDisposeNotifier<Color>;
+String _$localeHandlerHash() => r'21852c90e0efe8deb904a3f0a1ad247d8a1f4f21';
+
+/// See also [LocaleHandler].
+@ProviderFor(LocaleHandler)
+final localeHandlerProvider =
+    AutoDisposeNotifierProvider<LocaleHandler, String>.internal(
+  LocaleHandler.new,
+  name: r'localeHandlerProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$localeHandlerHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _$LocaleHandler = AutoDisposeNotifier<String>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member

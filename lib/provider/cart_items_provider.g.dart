@@ -20,6 +20,20 @@ final testHandlerProvider = AutoDisposeFutureProvider<String>.internal(
 );
 
 typedef TestHandlerRef = AutoDisposeFutureProviderRef<String>;
+String _$cHash() => r'33db5b1f27997ac9c4341157b400e60026073e67';
+
+/// See also [c].
+@ProviderFor(c)
+final cProvider = AutoDisposeProvider<int>.internal(
+  c,
+  name: r'cProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$cHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef CRef = AutoDisposeProviderRef<int>;
 String _$cartItemsHandlerHash() => r'a7d08e5825a5f5aca687a3d26aa63952f3ff9a1c';
 
 /// See also [CartItemsHandler].
